@@ -186,12 +186,20 @@
   }
 
   .show-apps {
-    .overview-icon {
-      border-radius: $small_radius;
-    }
-    &:active, &:checked {
-      .overview-icon {
-        background-color: $base_active_color; box-shadow: none;
+     .overview-icon {
+      & {
+        & .show-apps-icon,
+        &:checked .show-apps-icon,
+        &:focus .show-apps-icon {
+          color: transparent !important;
+          background-image: url("ubuntu-appgrid-icon.svg") !important;
+          border-radius: $small_radius;
+        }
+      }
+      &:active, &:checked {
+        .overview-icon {
+          background-color: $base_active_color; box-shadow: none;
+        }
       }
     }
   }
